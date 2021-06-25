@@ -1,0 +1,15 @@
+@import "mixins";
+@import "_null";
+$minWidth: 320px;
+$maxWidth: 1920;
+$maxWidthContainer: 1140;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+$mainFont: "Roboto";
+._container {
+	max-width: $maxWidthContainer + px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
