@@ -87,6 +87,10 @@ $mainFont: "Inter";
 		.fab {
 			margin-right: 10px;
 			margin-left: 10px;
+			transition: all 0.3s;
+			&:hover {
+				color: #fff;
+			}
 		}
 		.fab.insta {
 			font-weight: 900;
@@ -265,7 +269,7 @@ $mainFont: "Inter";
 		}
 	}
 	.banner-title-wrapper {
-		width: 60%;
+		flex: 1 1 60%;
 		@media (max-width: $md3+px) {
 			width: 100%;
 		}
@@ -355,12 +359,15 @@ $mainFont: "Inter";
 		}
 	}
 	.banner-img-wrapper {
-		width: 40%;
+		flex: 1 1 40%;
 		img {
 			width: 100%;
 			object-fit: cover;
 			display: block;
 			height: 100%;
+		}
+		@media (min-width: 560px) and (max-width: $md3+px) {
+			padding: 0 100px;
 		}
 		@media (max-width: $md3+px) {
 			width: 100%;
@@ -595,39 +602,28 @@ $mainFont: "Inter";
 .feedback {
 	padding: 114px 0 112px;
 	@media (max-width: $md3+px) {
-		padding: 50px 0px 70px;
+		padding: 0px 0px 70px;
 	}
 	.feedback-body {
 		display: flex;
-		@media (max-width: $md3+px) {
+		align-items: center;
+		@media (min-width: 700px) and (max-width: 991.98px) {
+			padding: 0 100px;
+		}
+		@media (max-width: $md2+px) {
 			flex-direction: column-reverse;
 		}
 	}
 	.feedback-img-wrapper {
 		position: relative;
 		flex: 1 1 50%;
-		padding: 0 21px;
+		padding: 0 21px 0 0;
 	}
-	.feedback-user-card {
-		position: absolute;
-		bottom: -34px;
-		left: calc(50% - 200px);
-		padding: 16px 48px 14px;
-		text-align: center;
-		border-radius: 6px;
-		background-color: #fff;
-		max-width: 400px;
-		width: 100%;
-		box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
-	}
+
 	.feedback-img {
 		width: 100%;
 	}
-	.feedback-img-logo {
-		position: absolute;
-		top: -33px;
-		left: -11px;
-	}
+
 	.feedback-img-title {
 		font-family: $mainFont;
 		color: #002147;
@@ -644,6 +640,7 @@ $mainFont: "Inter";
 	}
 	.feedback-content-wrapper {
 		flex: 1 1 50%;
+		align-items: center;
 	}
 	.feedback-content-title {
 		font-family: $mainFont;
@@ -651,6 +648,7 @@ $mainFont: "Inter";
 		font-size: 48px;
 		line-height: 60px;
 		font-weight: bold;
+		padding-top: 29px;
 		@media (max-width: $md3+px) {
 			font-size: 35px;
 			line-height: 40px;
@@ -678,7 +676,7 @@ $mainFont: "Inter";
 		line-height: 24px;
 		font-weight: 400;
 		word-spacing: -2px;
-		margin-bottom: 42px;
+		margin-bottom: 22px;
 		@media (max-width: $md3+px) {
 			text-align: center;
 			margin-bottom: 20px;
@@ -690,11 +688,10 @@ $mainFont: "Inter";
 		font-size: 16px;
 		line-height: 24px;
 		font-weight: bold;
-		margin-bottom: 7px;
+		margin-bottom: 10px;
 		@media (max-width: $md3+px) {
 			margin-bottom: 15px;
 			text-align: center;
-			
 		}
 	}
 	.feedback-card-wrapper {
@@ -734,6 +731,7 @@ $mainFont: "Inter";
 	background-color: #f0f4f9;
 	.statistic-wrapper {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
 		background-image: url(../img/map.png);
@@ -741,16 +739,22 @@ $mainFont: "Inter";
 		background-size: contain;
 		background-repeat: no-repeat;
 		text-align: center;
+		flex: 1 1 100%;
+		@media (max-width: $md3+px) {
+		}
 	}
 	.statistic-card-items {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
-		width: calc(100% / 12 * 3 - 30px);
+		flex: 1 1 25%;
+		@media (max-width: $md3+px) {
+			flex: 1 1 50%;
+			margin-bottom: 30px;
+		}
 	}
-	.statistic-card {
-	}
+
 	.card-statistic {
 		padding: 15px 0 30px 0;
 	}
@@ -778,10 +782,32 @@ $mainFont: "Inter";
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		flex-wrap: wrap;
+
+		@media (max-width: $md4+px) {
+			img {
+				width: 100%;
+			}
+		}
+		@media (max-width: $md2+px) {
+			flex-direction: column-reverse;
+		}
+		@media (min-width: $md3+px) {
+			padding: 0 65px;
+		}
 	}
 
 	.subscrible-content-wrapper {
 		width: calc(100% / 12 * 6 - 30px);
+		@media (max-width: 568px) {
+			width: 100%;
+			text-align: center;
+		}
+		@media (min-width: 569px) and (max-width: $md2+px) {
+			width: 70%;
+			margin-bottom: 30px;
+			text-align: center;
+		}
 	}
 	.subscrible-content-subtitle {
 		font-family: $mainFont;
@@ -797,20 +823,26 @@ $mainFont: "Inter";
 		line-height: 60px;
 		font-weight: bold;
 		margin-bottom: 26px;
+		@media (max-width: $md3+px) {
+			font-size: 35px;
+			line-height: 40px;
+		}
 	}
 
 	.subscrible-content-input {
 		border: 1px solid #bdbdbd;
 		border-radius: 4px;
-		padding: 15px 6px 20px 12px;
+		padding: 5px 6px 5px 12px;
 		width: 100%;
 		position: relative;
-		vertical-align: middle;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
 		.fas.fa-envelope {
 			margin-right: 12px;
 		}
-		label {
-			position: absolute;
+		.btn-subs {
+			margin-left: auto;
 			background-color: #fdc800;
 			font-family: $mainFont;
 			color: #002147;
@@ -819,17 +851,24 @@ $mainFont: "Inter";
 			font-weight: 500;
 			padding: 10px 23px 13px;
 			border-radius: 4px;
-			cursor: pointer;
-			top: 4px;
-			right: 6px;
+			transition: all 0.3s;
+			&:hover {
+				background-color: #002147;
+				color: #fdc800;
+			}
 		}
 		input {
 			font-family: $mainFont;
-			color: #bdbdbd;
+			color: #000;
 			font-size: 16px;
 			line-height: 16px;
 			font-weight: 400;
-			width: 70%;
+			padding-right: 10px;
+			flex-grow: 1;
+			width: 30%;
+		}
+		@media (max-width: $md3+px) {
+			margin-bottom: 30px;
 		}
 	}
 }
@@ -841,16 +880,34 @@ $mainFont: "Inter";
 	.footer-content-wrapper {
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: wrap;
+		@media (max-width: $md3+px) {
+			flex-direction: column;
+		}
 	}
 	.footer-left-side {
 		color: #fff;
-		width: 50%;
+		flex: 1 1 50%;
+		@media (max-width: $md3+px) {
+			margin-bottom: 30px;
+		}
 	}
 	.footer-logo {
 		margin-bottom: 35px;
 	}
 	.footer-mail {
 		margin-bottom: 26px;
+		a {
+			color: #fff;
+			transition: all 0.3s;
+			&:hover {
+				color: #fdc800;
+			}
+		}
+		transition: all 0.3s;
+		&:hover {
+			color: #fdc800;
+		}
 		.fas {
 			margin-right: 7px;
 		}
@@ -862,20 +919,32 @@ $mainFont: "Inter";
 		}
 	}
 	.footer-tel {
+		a {
+			color: #fff;
+			transition: all 0.3s;
+			&:hover {
+				color: #fdc800;
+			}
+		}
 		.fas {
 			margin-right: 7px;
+		}
+		transition: all 0.3s;
+		&:hover {
+			color: #fdc800;
 		}
 	}
 	.footer-right-side {
 		display: flex;
 		justify-content: space-between;
-		width: 50%;
+		flex: 1 1 50%;
 		color: #fff;
 		a {
 			color: #fff;
 		}
-	}
-	.footer-menu {
+		@media (max-width: 380+px) {
+			flex-direction: column;
+		}
 	}
 	.footer-menu-title {
 		margin-bottom: 12px;
@@ -884,8 +953,7 @@ $mainFont: "Inter";
 		line-height: 20px;
 		font-weight: bold;
 	}
-	.menu-list {
-	}
+
 	.list-item {
 		margin-bottom: 12px;
 	}
@@ -895,14 +963,24 @@ $mainFont: "Inter";
 		font-size: 16px;
 		line-height: 20px;
 		font-weight: 400;
+		transition: all 0.3s;
+		&:hover {
+			color: #fdc800;
+		}
 	}
 	.footer-copy {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
 		padding: 35px 36px;
 		background-color: #fdc800;
 		margin-top: 40px;
+		@media (max-width: $md4+px) {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
 	}
 	.footer-copy-text {
 		font-family: $mainFont;
@@ -910,12 +988,20 @@ $mainFont: "Inter";
 		font-size: 16px;
 		line-height: 16px;
 		font-weight: 400;
+		@media (max-width: $md4+px) {
+			margin-bottom: 15px;
+		}
 	}
-	.footer-copy-social {
-	}
+
 	.copy-social-link {
 		color: #002147;
 		margin: 0 10px;
+		.fab {
+			transition: all 0.3s;
+			&:hover {
+				color: #fff;
+			}
+		}
 		.fab.insta {
 			font-weight: 900;
 		}
