@@ -907,11 +907,15 @@ h6 {
 
 .courses .courses-card-img {
   width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
 }
 
 .courses .courses-card-img-logo {
   position: absolute;
-  bottom: 111px;
+  top: 145px;
   left: 15px;
   width: 80px;
   height: 80px;
@@ -925,12 +929,15 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 10px;
 }
 
-@media (max-width: 582px) {
-  .courses .courses-card-img-logo {
-    display: none;
-  }
+.courses .courses-card-img-logo img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+  height: 100%;
 }
 
 .courses .card-body {
@@ -993,9 +1000,6 @@ h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 @media (min-width: 700px) and (max-width: 991.98px) {
@@ -1018,11 +1022,76 @@ h6 {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 50%;
           flex: 1 1 50%;
-  padding: 0 21px 0 0;
+  padding: 0 10px 0 0;
+}
+
+@media (max-width: 767.98px) {
+  .feedback .feedback-img-wrapper {
+    padding: 0;
+  }
+}
+
+.feedback .feedback-user-body {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);
+  padding: 16px 0 14px;
+  margin-top: -44px;
+}
+
+.feedback .feedback-user-name {
+  font-family: "Inter";
+  color: #002147;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.feedback .feedback-user-role {
+  font-family: "Inter";
+  color: #757575;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
 }
 
 .feedback .feedback-img {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  display: block;
+}
+
+.feedback .feedback-img-logo {
+  position: absolute;
+  top: -33px;
+  left: -35px;
+}
+
+@media (max-width: 579px) {
+  .feedback .feedback-img-logo {
+    display: none;
+  }
 }
 
 .feedback .feedback-img-title {
@@ -1045,9 +1114,13 @@ h6 {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 50%;
           flex: 1 1 50%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding-left: 10px;
+}
+
+@media (max-width: 767.98px) {
+  .feedback .feedback-content-wrapper {
+    padding: 0;
+  }
 }
 
 .feedback .feedback-content-title {
@@ -1056,7 +1129,6 @@ h6 {
   font-size: 48px;
   line-height: 60px;
   font-weight: bold;
-  padding-top: 29px;
 }
 
 @media (max-width: 767.98px) {
@@ -1073,6 +1145,7 @@ h6 {
   font-size: 48px;
   line-height: 60px;
   font-weight: bold;
+  margin-bottom: 16px;
 }
 
 @media (max-width: 767.98px) {
@@ -1092,7 +1165,7 @@ h6 {
   line-height: 24px;
   font-weight: 400;
   word-spacing: -2px;
-  margin-bottom: 22px;
+  margin-bottom: 68px;
 }
 
 @media (max-width: 767.98px) {
@@ -1108,7 +1181,7 @@ h6 {
   font-size: 16px;
   line-height: 24px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 34px;
 }
 
 @media (max-width: 767.98px) {
@@ -1130,9 +1203,9 @@ h6 {
   border-radius: 6px;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .feedback .feedback-card-wrapper {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     padding: 5px 8px;
   }
 }

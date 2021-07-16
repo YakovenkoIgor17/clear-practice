@@ -546,10 +546,13 @@ $mainFont: "Inter";
 	}
 	.courses-card-img {
 		width: 100%;
+		height: 200px;
+		object-fit: cover;
+		display: block;
 	}
 	.courses-card-img-logo {
 		position: absolute;
-		bottom: 111px;
+		top: 145px;
 		left: 15px;
 		width: 80px;
 		height: 80px;
@@ -557,8 +560,12 @@ $mainFont: "Inter";
 		background-color: #f0f4f9;
 		justify-content: center;
 		align-items: center;
-		@media (max-width: 582px) {
-			display: none;
+		padding: 10px;
+		img {
+			width: 100%;
+			object-fit: contain;
+			display: block;
+			height: 100%;
 		}
 	}
 	.card-body {
@@ -606,7 +613,6 @@ $mainFont: "Inter";
 	}
 	.feedback-body {
 		display: flex;
-		align-items: center;
 		@media (min-width: 700px) and (max-width: 991.98px) {
 			padding: 0 100px;
 		}
@@ -617,13 +623,56 @@ $mainFont: "Inter";
 	.feedback-img-wrapper {
 		position: relative;
 		flex: 1 1 50%;
-		padding: 0 21px 0 0;
+		padding: 0 10px 0 0;
+		@media (max-width: $md3+px) {
+			padding: 0;
+		}
 	}
-
+	.feedback-user-body {
+		max-width: 400px;
+		width: 100%;
+		margin: 0 auto;
+		position: relative;
+		z-index: 5;
+		background-color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		border-radius: 6px;
+		box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);
+		padding: 16px 0 14px;
+		margin-top: -44px;
+	}
+	.feedback-user-name {
+		font-family: $mainFont;
+		color: #002147;
+		font-size: 20px;
+		line-height: 24px;
+		font-weight: bold;
+	}
+	.feedback-user-role {
+		font-family: $mainFont;
+		color: #757575;
+		font-size: 14px;
+		line-height: 24px;
+		font-weight: 400;
+	}
 	.feedback-img {
 		width: 100%;
+		object-fit: cover;
+		height: 100%;
+		display: block;
+	
 	}
-
+	.feedback-img-logo {
+		position: absolute;
+		top: -33px;
+		left: -35px;
+		@media (max-width: 579px){
+			display: none;
+		}
+	}
 	.feedback-img-title {
 		font-family: $mainFont;
 		color: #002147;
@@ -640,7 +689,10 @@ $mainFont: "Inter";
 	}
 	.feedback-content-wrapper {
 		flex: 1 1 50%;
-		align-items: center;
+		padding-left: 10px;
+		@media (max-width: $md3+px) {
+			padding: 0;
+		}
 	}
 	.feedback-content-title {
 		font-family: $mainFont;
@@ -648,7 +700,7 @@ $mainFont: "Inter";
 		font-size: 48px;
 		line-height: 60px;
 		font-weight: bold;
-		padding-top: 29px;
+		
 		@media (max-width: $md3+px) {
 			font-size: 35px;
 			line-height: 40px;
@@ -661,6 +713,7 @@ $mainFont: "Inter";
 		font-size: 48px;
 		line-height: 60px;
 		font-weight: bold;
+		margin-bottom: 16px;
 		@media (max-width: $md3+px) {
 			font-size: 35px;
 			line-height: 40px;
@@ -676,7 +729,7 @@ $mainFont: "Inter";
 		line-height: 24px;
 		font-weight: 400;
 		word-spacing: -2px;
-		margin-bottom: 22px;
+		margin-bottom: 68px;
 		@media (max-width: $md3+px) {
 			text-align: center;
 			margin-bottom: 20px;
@@ -688,7 +741,7 @@ $mainFont: "Inter";
 		font-size: 16px;
 		line-height: 24px;
 		font-weight: bold;
-		margin-bottom: 10px;
+		margin-bottom: 34px;
 		@media (max-width: $md3+px) {
 			margin-bottom: 15px;
 			text-align: center;
@@ -700,8 +753,8 @@ $mainFont: "Inter";
 		display: flex;
 		align-items: center;
 		border-radius: 6px;
-		@media (max-width: $md3+px) {
-			margin-bottom: 30px;
+		@media (max-width: $md2+px) {
+			margin-bottom: 40px;
 			padding: 5px 8px;
 		}
 	}
